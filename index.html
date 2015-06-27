@@ -1,30 +1,27 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 <head>
     <!-- title and meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="description" content="DrawlSVG- A JavaScript Plugin For Animating SVGs">
+    <meta name="description" content="DrawlSVG- Javascript library To Draw and Fill SVGs">
     <meta name="author" content="Brennan Vargas">
     <meta name="ROBOTS" content="INDEX, FOLLOW">
     <title>Drawl.js - Javascript For Animating SVGs</title>
-    <!-- css -->
-    <link href="assets/style.css" rel="stylesheet">
     <!-- minified normalize.css & skeleton.css-->
     <style>
-        html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:0.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}.container{position:relative;width:100%;max-width:960px;margin:0 auto;padding:0 20px;box-sizing:border-box}.column,.columns{width:100%;float:left;box-sizing:border-box}@media (min-width: 400px){.container{width:85%;padding:0}}@media (min-width: 550px){.container{width:80%}.column,.columns{margin-left:4%}.column:first-child,.columns:first-child{margin-left:0}.one.column,.one.columns{width:4.66666666667%}.two.columns{width:13.3333333333%}.three.columns{width:22%}.four.columns{width:30.6666666667%}.five.columns{width:39.3333333333%}.six.columns{width:48%}.seven.columns{width:56.6666666667%}.eight.columns{width:65.3333333333%}.nine.columns{width:74.0%}.ten.columns{width:82.6666666667%}.eleven.columns{width:91.3333333333%}.twelve.columns{width:100%;margin-left:0}.one-third.column{width:30.6666666667%}.two-thirds.column{width:65.3333333333%}.one-half.column{width:48%}.offset-by-one.column,.offset-by-one.columns{margin-left:8.66666666667%}.offset-by-two.column,.offset-by-two.columns{margin-left:17.3333333333%}.offset-by-three.column,.offset-by-three.columns{margin-left:26%}.offset-by-four.column,.offset-by-four.columns{margin-left:34.6666666667%}.offset-by-five.column,.offset-by-five.columns{margin-left:43.3333333333%}.offset-by-six.column,.offset-by-six.columns{margin-left:52%}.offset-by-seven.column,.offset-by-seven.columns{margin-left:60.6666666667%}.offset-by-eight.column,.offset-by-eight.columns{margin-left:69.3333333333%}.offset-by-nine.column,.offset-by-nine.columns{margin-left:78.0%}.offset-by-ten.column,.offset-by-ten.columns{margin-left:86.6666666667%}.offset-by-eleven.column,.offset-by-eleven.columns{margin-left:95.3333333333%}.offset-by-one-third.column,.offset-by-one-third.columns{margin-left:34.6666666667%}.offset-by-two-thirds.column,.offset-by-two-thirds.columns{margin-left:69.3333333333%}.offset-by-one-half.column,.offset-by-one-half.columns{margin-left:52%}}html{font-size:62.5%}body{font-size:1.5em;line-height:1.6;font-weight:400;font-family:"Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;color:#222}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:2rem;font-weight:300}h1{font-size:4.0rem;line-height:1.2;letter-spacing:-.1rem}h2{font-size:3.6rem;line-height:1.25;letter-spacing:-.1rem}h3{font-size:3.0rem;line-height:1.3;letter-spacing:-.1rem}h4{font-size:2.4rem;line-height:1.35;letter-spacing:-.08rem}h5{font-size:1.8rem;line-height:1.5;letter-spacing:-.05rem}h6{font-size:1.5rem;line-height:1.6;letter-spacing:0}@media (min-width: 550px){h1{font-size:5.0rem}h2{font-size:4.2rem}h3{font-size:3.6rem}h4{font-size:3.0rem}h5{font-size:2.4rem}h6{font-size:1.5rem}}p{margin-top:0}a{color:#1EAEDB}a:hover{color:#0FA0CE}.button,button,input[type="submit"],input[type="reset"],input[type="button"]{display:inline-block;height:38px;padding:0 30px;color:#555;text-align:center;font-size:11px;font-weight:600;line-height:38px;letter-spacing:.1rem;text-transform:uppercase;text-decoration:none;white-space:nowrap;background-color:transparent;border-radius:4px;border:1px solid #bbb;cursor:pointer;box-sizing:border-box}.button:hover,button:hover,input[type="submit"]:hover,input[type="reset"]:hover,input[type="button"]:hover,.button:focus,button:focus,input[type="submit"]:focus,input[type="reset"]:focus,input[type="button"]:focus{color:#333;border-color:#888;outline:0}.button.button-primary,button.button-primary,input[type="submit"].button-primary,input[type="reset"].button-primary,input[type="button"].button-primary{color:#FFF;background-color:#33C3F0;border-color:#33C3F0}.button.button-primary:hover,button.button-primary:hover,input[type="submit"].button-primary:hover,input[type="reset"].button-primary:hover,input[type="button"].button-primary:hover,.button.button-primary:focus,button.button-primary:focus,input[type="submit"].button-primary:focus,input[type="reset"].button-primary:focus,input[type="button"].button-primary:focus{color:#FFF;background-color:#1EAEDB;border-color:#1EAEDB}input[type="email"],input[type="number"],input[type="search"],input[type="text"],input[type="tel"],input[type="url"],input[type="password"],textarea,select{height:38px;padding:6px 10px;background-color:#fff;border:1px solid #D1D1D1;border-radius:4px;box-shadow:none;box-sizing:border-box}input[type="email"],input[type="number"],input[type="search"],input[type="text"],input[type="tel"],input[type="url"],input[type="password"],textarea{-webkit-appearance:none;-moz-appearance:none;appearance:none}textarea{min-height:65px;padding-top:6px;padding-bottom:6px}input[type="email"]:focus,input[type="number"]:focus,input[type="search"]:focus,input[type="text"]:focus,input[type="tel"]:focus,input[type="url"]:focus,input[type="password"]:focus,textarea:focus,select:focus{border:1px solid #33C3F0;outline:0}label,legend{display:block;margin-bottom:.5rem;font-weight:600}fieldset{padding:0;border-width:0}input[type="checkbox"],input[type="radio"]{display:inline}label > .label-body{display:inline-block;margin-left:.5rem;font-weight:normal}ul{list-style:circle inside}ol{list-style:decimal inside}ol,ul{padding-left:0;margin-top:0}ul ul,ul ol,ol ol,ol ul{margin:1.5rem 0 1.5rem 3rem;font-size:90%}li{margin-bottom:1rem}code{padding:.2rem .5rem;margin:0 .2rem;font-size:90%;white-space:nowrap;background:#F1F1F1;border:1px solid #E1E1E1;border-radius:4px}pre > code{display:block;padding:1rem 1.5rem;white-space:pre}th,td{padding:12px 15px;text-align:left;border-bottom:1px solid #E1E1E1}th:first-child,td:first-child{padding-left:0}th:last-child,td:last-child{padding-right:0}button,.button{margin-bottom:1rem}input,textarea,select,fieldset{margin-bottom:1.5rem}pre,blockquote,dl,figure,table,p,ul,ol,form{margin-bottom:2.5rem}.u-full-width{width:100%;box-sizing:border-box}.u-max-full-width{max-width:100%;box-sizing:border-box}.u-pull-right{float:right}.u-pull-left{float:left}hr{margin-top:3rem;margin-bottom:3.5rem;border-width:0;border-top:1px solid #E1E1E1}.container:after,.row:after,.u-cf{content:"";display:table;clear:both}
+        html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:0.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}.container{position:relative;width:100%;max-width:960px;margin:0 auto;padding:0 20px;box-sizing:border-box}.column,.columns{width:100%;float:left;box-sizing:border-box}@media (min-width: 400px){.container{width:85%;padding:0}}@media (min-width: 550px){.container{width:80%}.column,.columns{margin-left:4%}.column:first-child,.columns:first-child{margin-left:0}.one.column,.one.columns{width:4.66666666667%}.two.columns{width:13.3333333333%}.three.columns{width:22%}.four.columns{width:30.6666666667%}.five.columns{width:39.3333333333%}.six.columns{width:48%}.seven.columns{width:56.6666666667%}.eight.columns{width:65.3333333333%}.nine.columns{width:74.0%}.ten.columns{width:82.6666666667%}.eleven.columns{width:91.3333333333%}.twelve.columns{width:100%;margin-left:0}.one-third.column{width:30.6666666667%}.two-thirds.column{width:65.3333333333%}.one-half.column{width:48%}.offset-by-one.column,.offset-by-one.columns{margin-left:8.66666666667%}.offset-by-two.column,.offset-by-two.columns{margin-left:17.3333333333%}.offset-by-three.column,.offset-by-three.columns{margin-left:26%}.offset-by-four.column,.offset-by-four.columns{margin-left:34.6666666667%}.offset-by-five.column,.offset-by-five.columns{margin-left:43.3333333333%}.offset-by-six.column,.offset-by-six.columns{margin-left:52%}.offset-by-seven.column,.offset-by-seven.columns{margin-left:60.6666666667%}.offset-by-eight.column,.offset-by-eight.columns{margin-left:69.3333333333%}.offset-by-nine.column,.offset-by-nine.columns{margin-left:78.0%}.offset-by-ten.column,.offset-by-ten.columns{margin-left:86.6666666667%}.offset-by-eleven.column,.offset-by-eleven.columns{margin-left:95.3333333333%}.offset-by-one-third.column,.offset-by-one-third.columns{margin-left:34.6666666667%}.offset-by-two-thirds.column,.offset-by-two-thirds.columns{margin-left:69.3333333333%}.offset-by-one-half.column,.offset-by-one-half.columns{margin-left:52%}}html{font-size:62.5%}body{font-size:1.5em;line-height:1.6;font-weight:400;font-family:"Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;color:#222}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:2rem;font-weight:300}h1{font-size:4.0rem;line-height:1.2;letter-spacing:-.1rem}h2{font-size:3.6rem;line-height:1.25;letter-spacing:-.1rem}h3{font-size:3.0rem;line-height:1.3;letter-spacing:-.1rem}h4{font-size:2.4rem;line-height:1.35;letter-spacing:-.08rem}h5{font-size:1.8rem;line-height:1.5;letter-spacing:-.05rem}h6{font-size:1.5rem;line-height:1.6;letter-spacing:0}@media (min-width: 550px){h1{font-size:5.0rem}h2{font-size:4.2rem}h3{font-size:3.6rem}h4{font-size:3.0rem}h5{font-size:2.4rem}h6{font-size:1.5rem}}p{margin-top:0}a{color:#1EAEDB}a:hover{color:#0FA0CE}.button,button,input[type="submit"],input[type="reset"],input[type="button"]{display:inline-block;height:38px;padding:0 30px;color:#555;text-align:center;font-size:11px;font-weight:600;line-height:38px;letter-spacing:.1rem;text-transform:uppercase;text-decoration:none;white-space:nowrap;background-color:transparent;border-radius:4px;border:1px solid #bbb;cursor:pointer;box-sizing:border-box}.button:hover,button:hover,input[type="submit"]:hover,input[type="reset"]:hover,input[type="button"]:hover,.button:focus,button:focus,input[type="submit"]:focus,input[type="reset"]:focus,input[type="button"]:focus{color:#333;border-color:#888;outline:0}.button.button-primary,button.button-primary,input[type="submit"].button-primary,input[type="reset"].button-primary,input[type="button"].button-primary{color:#FFF;background-color:#33C3F0;border-color:#33C3F0}.button.button-primary:hover,button.button-primary:hover,input[type="submit"].button-primary:hover,input[type="reset"].button-primary:hover,input[type="button"].button-primary:hover,.button.button-primary:focus,button.button-primary:focus,input[type="submit"].button-primary:focus,input[type="reset"].button-primary:focus,input[type="button"].button-primary:focus{color:#FFF;background-color:#1EAEDB;border-color:#1EAEDB}input[type="email"],input[type="number"],input[type="search"],input[type="text"],input[type="tel"],input[type="url"],input[type="password"],textarea,select{height:38px;padding:6px 10px;background-color:#fff;border:1px solid #D1D1D1;border-radius:4px;box-shadow:none;box-sizing:border-box}input[type="email"],input[type="number"],input[type="search"],input[type="text"],input[type="tel"],input[type="url"],input[type="password"],textarea{-webkit-appearance:none;-moz-appearance:none;appearance:none}textarea{min-height:65px;padding-top:6px;padding-bottom:6px}input[type="email"]:focus,input[type="number"]:focus,input[type="search"]:focus,input[type="text"]:focus,input[type="tel"]:focus,input[type="url"]:focus,input[type="password"]:focus,textarea:focus,select:focus{border:1px solid #33C3F0;outline:0}label,legend{display:block;margin-bottom:.5rem;font-weight:600}fieldset{padding:0;border-width:0}input[type="checkbox"],input[type="radio"]{display:inline}label > .label-body{display:inline-block;margin-left:.5rem;font-weight:normal}ul{list-style:circle inside}ol{list-style:decimal inside}ol,ul{padding-left:0;margin-top:0}ul ul,ul ol,ol ol,ol ul{margin:1.5rem 0 1.5rem 3rem;font-size:90%}li{margin-bottom:1rem}code{padding:.2rem .5rem;margin:0 .2rem;font-size:90%;white-space:nowrap;background:#F1F1F1;border:1px solid #E1E1E1;border-radius:4px}pre > code{display:block;padding:1rem 1.5rem;white-space:pre}th,td{padding:12px 15px;text-align:left;border-bottom:1px solid #E1E1E1}th:first-child,td:first-child{padding-left:0}th:last-child,td:last-child{padding-right:0}button,.button{margin-bottom:1rem}input,textarea,select,fieldset{margin-bottom:1.5rem}pre,blockquote,dl,figure,table,p,ul,ol,form{margin-bottom:2.5rem}.u-full-width{width:100%;box-sizing:border-box}.u-max-full-width{max-width:100%;box-sizing:border-box}.u-pull-right{float:right}.u-pull-left{float:left}hr{margin-top:3rem;margin-bottom:3.5rem;border-width:0;border-top:1px solid #E1E1E1}.container:after,.row:after,.u-cf{content:"";display:table;clear:both}
     </style>
     <!-- drawl demo css -->
     <style>
         .container {
             max-width: 800px; }
         .header {
-            margin-top: 6rem;
+            margin-top: 2rem;
             text-align: center; }
         .value-prop {
             margin-top: 1rem; }
         .value-props {
-            margin-top: 2rem;
             margin-bottom: 4rem; }
         .value-prop svg{
             display: block;
@@ -32,122 +29,110 @@
             width: 30%;
             height: auto;
         }
+        .ie-soon{
+            font-size: 13px;
+            color: #333;
+        }
         /* Larger than phone */
         @media (min-width: 550px) {
             .header {
-                margin-top: 5rem; }
+                margin-top: 1rem; }
             .value-props {
                 margin-top: 2rem;
                 margin-bottom: 7rem; }
         }
-            </style>
+</style>
+    <!-- prettify code -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </head>
 <body>
     <div class="container">
         <section class="header">
-            <!-- Drawl logo SVG -->
-            <svg class="replay-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 609 128">
-	<path fill="#B4BEC8" stroke="#33C3F0" stroke-width="2px" stroke-miterlimit="10" d="M13.38,105.484v-85.2h30.96c6.96,0,13.06,1.122,18.3,3.36c5.239,2.24,9.619,5.28,13.14,9.12c3.52,3.84,6.16,8.34,7.92,13.5
-		c1.759,5.16,2.64,10.662,2.64,16.5c0,6.48-0.98,12.341-2.94,17.58c-1.961,5.241-4.781,9.72-8.46,13.44
-		c-3.681,3.72-8.1,6.6-13.26,8.64c-5.16,2.04-10.941,3.06-17.34,3.06H13.38z M69.66,62.764c0-4.08-0.561-7.839-1.68-11.28
-		c-1.121-3.439-2.76-6.399-4.92-8.88c-2.16-2.479-4.821-4.399-7.98-5.76c-3.161-1.359-6.741-2.04-10.74-2.04h-14.4v56.16h14.4
-		c4.08,0,7.699-0.72,10.86-2.16c3.159-1.44,5.799-3.42,7.92-5.94c2.119-2.52,3.739-5.499,4.86-8.94
-		C69.1,70.485,69.66,66.765,69.66,62.764z"/>
-	<path fill="#B4BEC8" stroke="#33C3F0" stroke-width="2px" stroke-miterlimit="10" d="M99.298,105.484v-85.2h37.68c3.918,0,7.54,0.821,10.86,2.46c3.319,1.641,6.18,3.801,8.58,6.48
-		c2.4,2.681,4.279,5.72,5.64,9.12c1.359,3.401,2.04,6.821,2.04,10.26c0,5.52-1.38,10.541-4.14,15.06
-		c-2.76,4.521-6.5,7.781-11.22,9.78l19.44,32.04h-18.6l-17.4-28.56h-16.32v28.56H99.298z M115.858,62.404h20.76
-		c1.519,0,2.94-0.36,4.26-1.08c1.32-0.72,2.46-1.699,3.42-2.94c0.96-1.239,1.72-2.7,2.28-4.38c0.559-1.68,0.84-3.48,0.84-5.4
-		c0-1.999-0.321-3.84-0.96-5.52c-0.641-1.68-1.5-3.139-2.58-4.38c-1.08-1.24-2.321-2.2-3.72-2.88c-1.401-0.679-2.82-1.02-4.26-1.02
-		h-20.04V62.404z"/>
-	<path fill="#B4BEC8" stroke="#33C3F0" stroke-width="2px" stroke-miterlimit="10" d="M202.02,20.284h14.64l32.4,85.2h-17.04l-7.92-21.24h-29.76l-7.8,21.24H169.5L202.02,20.284z M221.1,72.604l-11.76-33.48
-		l-12.24,33.48H221.1z"/>
-	<path fill="#B4BEC8" stroke="#33C3F0" stroke-width="2px" stroke-miterlimit="10" d="M280.5,20.524h15.24l9.6,28.2l9.6-28.2h15.36l-14.52,38.76l10.8,27.24l24.12-66.24h18l-34.68,85.2H320.1l-14.76-35.76
-		l-14.76,35.76h-13.92l-34.44-85.2h17.76l24.24,66.24l10.56-27.24L280.5,20.524z"/>
-	<path fill="#B4BEC8" stroke="#33C3F0" stroke-width="2px" stroke-miterlimit="10" d="M377.459,105.484v-85.2h16.561v70.68h43.439v14.52H377.459z"/>
-	<path fill="#B4BEC8" stroke="#33C3F0" stroke-width="2px" stroke-miterlimit="10" d="M445.62,105.484v-17.28h13.2v17.28H445.62z"/>
-	<path fill="#B4BEC8" stroke="#33C3F0" stroke-width="2px" stroke-miterlimit="10" d="M470.219,88.084c1.12,0.8,3,1.68,5.641,2.64c2.64,0.96,5.679,1.44,9.12,1.44c3.359,0,6.039-0.58,8.04-1.74
-		c1.998-1.159,3.519-2.94,4.56-5.34c1.039-2.4,1.72-5.379,2.04-8.94c0.318-3.559,0.48-7.74,0.48-12.54v-43.32h16.56v43.32
-		c0,6.48-0.341,12.38-1.02,17.7c-0.681,5.321-2.121,9.861-4.32,13.62c-2.201,3.761-5.382,6.681-9.54,8.76
-		c-4.161,2.079-9.762,3.12-16.8,3.12c-7.2,0-13.361-1.759-18.48-5.28L470.219,88.084z"/>
-	<path fill="#B4BEC8" stroke="#33C3F0" stroke-width="2px" stroke-miterlimit="10" d="M584.219,42.604c-0.561-0.559-1.58-1.32-3.06-2.28c-1.481-0.96-3.281-1.899-5.4-2.82c-2.12-0.919-4.421-1.699-6.899-2.34
-		c-2.48-0.64-5.001-0.96-7.561-0.96c-4.56,0-7.961,0.84-10.2,2.52c-2.24,1.68-3.359,4.041-3.359,7.08c0,1.761,0.42,3.221,1.26,4.38
-		c0.84,1.161,2.059,2.181,3.66,3.06c1.6,0.881,3.619,1.68,6.06,2.4c2.439,0.72,5.26,1.481,8.46,2.28
-		c4.159,1.121,7.939,2.321,11.341,3.6c3.399,1.281,6.279,2.88,8.64,4.8c2.358,1.92,4.18,4.221,5.46,6.9
-		c1.278,2.681,1.92,5.981,1.92,9.9c0,4.56-0.86,8.46-2.58,11.7c-1.721,3.24-4.04,5.861-6.96,7.86c-2.921,2-6.281,3.461-10.08,4.38
-		c-3.801,0.918-7.781,1.38-11.939,1.38c-6.401,0-12.721-0.96-18.96-2.88c-6.24-1.92-11.841-4.639-16.801-8.16l7.32-14.28
-		c0.72,0.72,2.02,1.661,3.9,2.82c1.878,1.161,4.099,2.321,6.659,3.48c2.56,1.161,5.4,2.141,8.521,2.94c3.12,0.801,6.318,1.2,9.6,1.2
-		c9.12,0,13.681-2.919,13.681-8.76c0-1.839-0.521-3.399-1.561-4.68c-1.04-1.279-2.52-2.4-4.439-3.36
-		c-1.92-0.96-4.241-1.839-6.96-2.64c-2.721-0.799-5.761-1.68-9.12-2.64c-4.08-1.119-7.62-2.34-10.62-3.66
-		c-3-1.32-5.501-2.88-7.5-4.68c-2.001-1.8-3.501-3.879-4.5-6.24c-1.001-2.359-1.5-5.179-1.5-8.46c0-4.32,0.799-8.16,2.399-11.52
-		c1.6-3.36,3.82-6.159,6.66-8.4c2.839-2.239,6.139-3.939,9.9-5.1c3.76-1.159,7.8-1.74,12.12-1.74c6,0,11.52,0.941,16.56,2.82
-		c5.04,1.88,9.439,4.101,13.2,6.66L584.219,42.604z"/>
-</svg>
-            <!-- monitor SVG -->
-            <svg xmlns="http://www.w3.org/2000/svg" class="replay-svg" viewBox="0 0 960 480" preserveAspectRatio="xMinYMin meet">
-                <path fill="#B4BEC8" stroke="#B4BEC8" stroke-width="2px" stroke-miterlimit="10" d="M570.14 440.2l-29.165-28.99c-7.103-8.5-6.152-36.718-6.02-40.665H425.048c.133 3.947 1.082 32.164-6.018 40.666l-29.166 28.99c-1.237 1.404-1.712 2.505-1.623 3.37h-.054c.76 7.727 6.664 6.332 13.607 6.332H558.01c6.696 0 12.412 1.27 13.493-5.56.58-.953.274-2.282-1.364-4.14z"/>
-                <path fill="#C8D2DC" stroke="#C8D2DC" stroke-width="2px" stroke-miterlimit="10" d="M727.488 355.125c0 8.514-6.597 15.42-14.738 15.42h-465.5c-8.14 0-14.74-6.906-14.74-15.42V45.42c0-8.517 6.6-15.42 14.74-15.42h465.5c8.142 0 14.738 6.903 14.738 15.42v309.705z"/>
-                <path fill="#fff" stroke="#C8D2DC" stroke-width="2px" stroke-miterlimit="10" d="M489.01 343.713c-.042-4.223 3.447-6.254 3.605-6.352-1.963-2.866-5.018-3.263-6.102-3.31-2.602-.26-5.074 1.53-6.39 1.53s-3.356-1.49-5.506-1.448c-2.836.04-5.445 1.645-6.907 4.182-2.942 5.11-.75 12.672 2.116 16.814 1.4 2.02 3.072 4.305 5.268 4.22 2.114-.08 2.913-1.362 5.467-1.362 2.556 0 3.274 1.363 5.51 1.322 2.273-.04 3.716-2.064 5.105-4.098 1.61-2.35 2.273-4.63 2.313-4.748-.05-.02-4.434-1.7-4.48-6.75M484.807 331.31c1.168-1.41 1.953-3.37 1.738-5.327-1.68.068-3.713 1.12-4.916 2.53-1.08 1.247-2.027 3.245-1.77 5.16 1.87.143 3.784-.95 4.947-2.362"/>
-                <path fill="#3C4650" stroke="#3C4650" stroke-width="2px" stroke-miterlimit="10" d="M727.488 315.527V45.982c0-8.828-6.597-15.982-14.738-15.982h-465.5c-8.14 0-14.74 7.155-14.74 15.982v269.545H727.49z"/>
-                <path fill="#141E28" stroke="#141E28" stroke-width="2px" stroke-miterlimit="10" d="M251.2 48.887h457.205v245.52H251.2z"/>
+            <!-- drawl SVG -->
+            <svg class="replay-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 609 128" preserveAspectRatio="xMinYMin meet">
+	            <path fill="#B4BEC8" stroke="#33C3F0" stroke-width="2px" d="M13.38,105.484v-85.2h30.96c6.96,0,13.06,1.122,18.3,3.36c5.239,2.24,9.619,5.28,13.14,9.12c3.52,3.84,6.16,8.34,7.92,13.5 c1.759,5.16,2.64,10.662,2.64,16.5c0,6.48-0.98,12.341-2.94,17.58c-1.961,5.241-4.781,9.72-8.46,13.44 c-3.681,3.72-8.1,6.6-13.26,8.64c-5.16,2.04-10.941,3.06-17.34,3.06H13.38z M69.66,62.764c0-4.08-0.561-7.839-1.68-11.28 c-1.121-3.439-2.76-6.399-4.92-8.88c-2.16-2.479-4.821-4.399-7.98-5.76c-3.161-1.359-6.741-2.04-10.74-2.04h-14.4v56.16h14.4 c4.08,0,7.699-0.72,10.86-2.16c3.159-1.44,5.799-3.42,7.92-5.94c2.119-2.52,3.739-5.499,4.86-8.94 C69.1,70.485,69.66,66.765,69.66,62.764z"/>
+                <path fill="#B4BEC8" stroke="#33C3F0" stroke-width="2px" d="M99.298,105.484v-85.2h37.68c3.918,0,7.54,0.821,10.86,2.46c3.319,1.641,6.18,3.801,8.58,6.48 c2.4,2.681,4.279,5.72,5.64,9.12c1.359,3.401,2.04,6.821,2.04,10.26c0,5.52-1.38,10.541-4.14,15.06 c-2.76,4.521-6.5,7.781-11.22,9.78l19.44,32.04h-18.6l-17.4-28.56h-16.32v28.56H99.298z M115.858,62.404h20.76 c1.519,0,2.94-0.36,4.26-1.08c1.32-0.72,2.46-1.699,3.42-2.94c0.96-1.239,1.72-2.7,2.28-4.38c0.559-1.68,0.84-3.48,0.84-5.4 c0-1.999-0.321-3.84-0.96-5.52c-0.641-1.68-1.5-3.139-2.58-4.38c-1.08-1.24-2.321-2.2-3.72-2.88c-1.401-0.679-2.82-1.02-4.26-1.02 h-20.04V62.404z"/>
+                <path fill="#B4BEC8" stroke="#33C3F0" stroke-width="2px" d="M202.02,20.284h14.64l32.4,85.2h-17.04l-7.92-21.24h-29.76l-7.8,21.24H169.5L202.02,20.284z M221.1,72.604l-11.76-33.48 l-12.24,33.48H221.1z"/>
+                <path fill="#B4BEC8" stroke="#33C3F0" stroke-width="2px" d="M280.5,20.524h15.24l9.6,28.2l9.6-28.2h15.36l-14.52,38.76l10.8,27.24l24.12-66.24h18l-34.68,85.2H320.1l-14.76-35.76 l-14.76,35.76h-13.92l-34.44-85.2h17.76l24.24,66.24l10.56-27.24L280.5,20.524z"/>
+                <path fill="#B4BEC8" stroke="#33C3F0" stroke-width="2px" d="M377.459,105.484v-85.2h16.561v70.68h43.439v14.52H377.459z"/>
+                <path fill="#B4BEC8" stroke="#33C3F0" stroke-width="2px" d="M445.62,105.484v-17.28h13.2v17.28H445.62z"/>
+                <path fill="#B4BEC8" stroke="#33C3F0" stroke-width="2px" d="M470.219,88.084c1.12,0.8,3,1.68,5.641,2.64c2.64,0.96,5.679,1.44,9.12,1.44c3.359,0,6.039-0.58,8.04-1.74 c1.998-1.159,3.519-2.94,4.56-5.34c1.039-2.4,1.72-5.379,2.04-8.94c0.318-3.559,0.48-7.74,0.48-12.54v-43.32h16.56v43.32 c0,6.48-0.341,12.38-1.02,17.7c-0.681,5.321-2.121,9.861-4.32,13.62c-2.201,3.761-5.382,6.681-9.54,8.76 c-4.161,2.079-9.762,3.12-16.8,3.12c-7.2,0-13.361-1.759-18.48-5.28L470.219,88.084z"/>
+                <path fill="#B4BEC8" stroke="#33C3F0" stroke-width="2px"2 d="M584.219,42.604c-0.561-0.559-1.58-1.32-3.06-2.28c-1.481-0.96-3.281-1.899-5.4-2.82c-2.12-0.919-4.421-1.699-6.899-2.34 c-2.48-0.64-5.001-0.96-7.561-0.96c-4.56,0-7.961,0.84-10.2,2.52c-2.24,1.68-3.359,4.041-3.359,7.08c0,1.761,0.42,3.221,1.26,4.38 c0.84,1.161,2.059,2.181,3.66,3.06c1.6,0.881,3.619,1.68,6.06,2.4c2.439,0.72,5.26,1.481,8.46,2.28 c4.159,1.121,7.939,2.321,11.341,3.6c3.399,1.281,6.279,2.88,8.64,4.8c2.358,1.92,4.18,4.221,5.46,6.9 c1.278,2.681,1.92,5.981,1.92,9.9c0,4.56-0.86,8.46-2.58,11.7c-1.721,3.24-4.04,5.861-6.96,7.86c-2.921,2-6.281,3.461-10.08,4.38 c-3.801,0.918-7.781,1.38-11.939,1.38c-6.401,0-12.721-0.96-18.96-2.88c-6.24-1.92-11.841-4.639-16.801-8.16l7.32-14.28 c0.72,0.72,2.02,1.661,3.9,2.82c1.878,1.161,4.099,2.321,6.659,3.48c2.56,1.161,5.4,2.141,8.521,2.94c3.12,0.801,6.318,1.2,9.6,1.2 c9.12,0,13.681-2.919,13.681-8.76c0-1.839-0.521-3.399-1.561-4.68c-1.04-1.279-2.52-2.4-4.439-3.36 c-1.92-0.96-4.241-1.839-6.96-2.64c-2.721-0.799-5.761-1.68-9.12-2.64c-4.08-1.119-7.62-2.34-10.62-3.66 c-3-1.32-5.501-2.88-7.5-4.68c-2.001-1.8-3.501-3.879-4.5-6.24c-1.001-2.359-1.5-5.179-1.5-8.46c0-4.32,0.799-8.16,2.399-11.52 c1.6-3.36,3.82-6.159,6.66-8.4c2.839-2.239,6.139-3.939,9.9-5.1c3.76-1.159,7.8-1.74,12.12-1.74c6,0,11.52,0.941,16.56,2.82 c5.04,1.88,9.439,4.101,13.2,6.66L584.219,42.604z"/>
             </svg>
-            <div><button class="drawl-again">Replay</button></div>
-            <div><a href="https://github.com/brennan-v/drawl/archive/master.zip" class="button button-primary">Download</a> <a href="https://github.com/brennan-v/drawl" class="button button-primary">View on Github</a></div>
+            <!-- monitor SVG -->
+            <svg class="replay-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" preserveAspectRatio="xMinYMin meet">
+                <path fill="#B4BEC8" stroke="#B4BEC8" stroke-width="2px" d="M570.14 440.2l-29.165-28.99c-7.103-8.5-6.152-36.718-6.02-40.665H425.048c.133 3.947 1.082 32.164-6.018 40.666l-29.166 28.99c-1.237 1.404-1.712 2.505-1.623 3.37h-.054c.76 7.727 6.664 6.332 13.607 6.332H558.01c6.696 0 12.412 1.27 13.493-5.56.58-.953.274-2.282-1.364-4.14z"/>
+                <path fill="#C8D2DC" stroke="#C8D2DC" stroke-width="2px" d="M727.488 355.125c0 8.514-6.597 15.42-14.738 15.42h-465.5c-8.14 0-14.74-6.906-14.74-15.42V45.42c0-8.517 6.6-15.42 14.74-15.42h465.5c8.142 0 14.738 6.903 14.738 15.42v309.705z"/>
+                <path fill="#FFFFFF" stroke="#C8D2DC" stroke-width="2px" d="M489.01 343.713c-.042-4.223 3.447-6.254 3.605-6.352-1.963-2.866-5.018-3.263-6.102-3.31-2.602-.26-5.074 1.53-6.39 1.53s-3.356-1.49-5.506-1.448c-2.836.04-5.445 1.645-6.907 4.182-2.942 5.11-.75 12.672 2.116 16.814 1.4 2.02 3.072 4.305 5.268 4.22 2.114-.08 2.913-1.362 5.467-1.362 2.556 0 3.274 1.363 5.51 1.322 2.273-.04 3.716-2.064 5.105-4.098 1.61-2.35 2.273-4.63 2.313-4.748-.05-.02-4.434-1.7-4.48-6.75M484.807 331.31c1.168-1.41 1.953-3.37 1.738-5.327-1.68.068-3.713 1.12-4.916 2.53-1.08 1.247-2.027 3.245-1.77 5.16 1.87.143 3.784-.95 4.947-2.362"/>
+                <path fill="#3C4650" stroke="#3C4650" stroke-width="2px" d="M727.488 315.527V45.982c0-8.828-6.597-15.982-14.738-15.982h-465.5c-8.14 0-14.74 7.155-14.74 15.982v269.545H727.49z"/>
+                <path fill="#141E28" stroke="#141E28" stroke-width="2px" d="M251.2 48.887h457.205v245.52H251.2z"/>
+            </svg>
+            <!-- element that drawl assigned the replay function since replayClass = "drawl-again" -->
+            <div>
+              <button class="drawl-again">Replay</button>
+            </div>
+            <div>
+              <a href="https://github.com/brennan-v/drawl/archive/master.zip" class="button button-primary">Download</a> <a href="https://github.com/brennan-v/drawl" class="button button-primary">View on Github</a>
+            </div>
             <div class="value-props row">
                 <div class="four columns value-prop">
                     <svg class="delayed-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
-                        <path fill="#3C4650" stroke="#33C3F0" stroke-width="20px" stroke-miterlimit="10" d="M576 736l96 96 320-320-320-320-96 96 224 224z"/>
-                        <path fill="#3C4650" stroke="#33C3F0" stroke-width="20px" stroke-miterlimit="10" d="M448 288l-96-96-320 320 320 320 96-96-224-224z"/>
+                        <path fill="#3C4650" stroke="#33C3F0" stroke-width="20px" d="M576 736l96 96 320-320-320-320-96 96 224 224z"/>
+                        <path fill="#3C4650" stroke="#33C3F0" stroke-width="20px" d="M448 288l-96-96-320 320 320 320 96-96-224-224z"/>
                     </svg>
                     No Dependencies.
                     <br/>Just Pure Javascript.
                 </div>
                 <div class="four columns value-prop">
                     <svg class="delayed-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                        <path fill="#3C4650" stroke="#33C3F0" stroke-width="1px" stroke-miterlimit="10" d="M0,43c0,2.21,1.79,4,4,4h40c2.21,0,4-1.79,4-4V6c0-2.21-1.79-4-4-4H4C1.79,2,0,3.79,0,6V43z M7.2,16h33.6
-	c1.22,0,2.2,0.98,2.2,2.2v21.6c0,1.22-0.98,2.2-2.2,2.2H7.2C5.98,42,5,41.02,5,39.8V18.2C5,16.98,5.98,16,7.2,16z M5,9.5
-	C5,8.12,6.12,7,7.5,7S10,8.12,10,9.5S8.88,12,7.5,12S5,10.88,5,9.5z M14,9.5C14,8.12,15.12,7,16.5,7S19,8.12,19,9.5
-	S17.88,12,16.5,12S14,10.88,14,9.5z M23,9.5C23,8.12,24.12,7,25.5,7S28,8.12,28,9.5S26.88,12,25.5,12S23,10.88,23,9.5z"/>
-                        <path fill="#3C4650" stroke="#33C3F0" stroke-width="1px" stroke-miterlimit="10" d="M17.521,21.037l-2.802-2.802h-1.401v1.401l2.802,2.802L17.521,21.037z M18.922,16.833h1.4v2.802h-1.4V16.833
-	z M24.526,23.839h2.802v1.401h-2.802V23.839z M25.928,19.636v-1.401h-1.401l-2.802,2.802l1.401,1.401L25.928,19.636z M11.916,23.839
-	h2.803v1.401h-2.803V23.839z M18.922,29.443h1.4v2.802h-1.4V29.443z M13.317,29.443v1.4h1.401l2.802-2.802l-1.402-1.401
-	L13.317,29.443z M34.027,36.142L20.101,22.216c-0.409-0.409-1.077-0.409-1.486,0l-1.316,1.316c-0.409,0.409-0.409,1.077,0,1.486
-	l13.925,13.926c0.409,0.408,1.077,0.408,1.486,0l1.316-1.316C34.436,37.22,34.436,36.551,34.027,36.142z M22.424,28.742
-	l-4.203-4.203l1.402-1.4l4.204,4.203L22.424,28.742z"/>
+                        <path fill="#3C4650" stroke="#33C3F0" stroke-width="1px" d="M0,43c0,2.21,1.79,4,4,4h40c2.21,0,4-1.79,4-4V6c0-2.21-1.79-4-4-4H4C1.79,2,0,3.79,0,6V43z M7.2,16h33.6 c1.22,0,2.2,0.98,2.2,2.2v21.6c0,1.22-0.98,2.2-2.2,2.2H7.2C5.98,42,5,41.02,5,39.8V18.2C5,16.98,5.98,16,7.2,16z M5,9.5 C5,8.12,6.12,7,7.5,7S10,8.12,10,9.5S8.88,12,7.5,12S5,10.88,5,9.5z M14,9.5C14,8.12,15.12,7,16.5,7S19,8.12,19,9.5 S17.88,12,16.5,12S14,10.88,14,9.5z M23,9.5C23,8.12,24.12,7,25.5,7S28,8.12,28,9.5S26.88,12,25.5,12S23,10.88,23,9.5z"/>
+                        <path fill="#3C4650" stroke="#33C3F0" stroke-width="1px" d="M17.521,21.037l-2.802-2.802h-1.401v1.401l2.802,2.802L17.521,21.037z M18.922,16.833h1.4v2.802h-1.4V16.833 z M24.526,23.839h2.802v1.401h-2.802V23.839z M25.928,19.636v-1.401h-1.401l-2.802,2.802l1.401,1.401L25.928,19.636z M11.916,23.839 h2.803v1.401h-2.803V23.839z M18.922,29.443h1.4v2.802h-1.4V29.443z M13.317,29.443v1.4h1.401l2.802-2.802l-1.402-1.401 L13.317,29.443z M34.027,36.142L20.101,22.216c-0.409-0.409-1.077-0.409-1.486,0l-1.316,1.316c-0.409,0.409-0.409,1.077,0,1.486 l13.925,13.926c0.409,0.408,1.077,0.408,1.486,0l1.316-1.316C34.436,37.22,34.436,36.551,34.027,36.142z M22.424,28.742 l-4.203-4.203l1.402-1.4l4.204,4.203L22.424,28.742z"/>
                     </svg>
                     Chrome, Firefox, Safari & Opera.<br/>
-                    Mobile browsers too.<br/>
-                    IE support coming soon.
+                    Even mobile browsers.<br/>
+                    <span class="ie-soon">IE support coming soon.</span>
                 </div>
                 <div class="four columns value-prop">
                     <svg class="delayed-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
-                        <path fill="#3C4650" stroke="#33C3F0" stroke-width="20px" stroke-miterlimit="10" d="M512 0c-282.77 0-512 229.23-512 512s229.226 512 512 512c282.77 0 512-229.23 512-512s-229.23-512-512-512zM512 832c-48.458 0-94.384-10.796-135.542-30.082l33.162-55.276c31.356 13.712 65.966 21.358 102.38 21.358 93.208 0 174.772-49.818 219.542-124.278l54.882 32.934c-55.964 93.070-157.914 155.344-274.424 155.344zM832 384c0 35.2-28.8 64-64 64h-128c-35.2 0-64-28.8-64-64h-128c0 35.2-28.8 64-64 64h-128c-35.2 0-64-28.8-64-64v-96c0-17.6 14.4-32 32-32h192c17.6 0 32 14.4 32 32v32h128v-32c0-17.6 14.4-32 32-32h192c17.6 0 32 14.4 32 32v96z"/>
+                        <path fill="#3C4650" stroke="#33C3F0" stroke-width="20px" d="M384 0l-384 512h384l-256 512 896-640h-512l384-384z"></path>
                     </svg>
-                    Looks pretty cool.
+                    Quick and easy to get started.<br/>
+                    Download, reference and init.
                 </div>
             </div>
         </section>
+        <section class="setup">
+            <h1>Setup Drawl:</h1>
+                <h4>2. Link and activate Drawl</h4>
+                A. Drawl downloaded and extracted into project assets:
+                <pre class="prettyprint lang-html">&lt;script src="path/to/drawl.js">&lt;/script><br/>&lt;script>new Drawl();&lt;/script></pre>
+                <h5>Or (quicker)</h5>
+                B. Use Drawl.js CDN:
+                <pre class="prettyprint lang-html">&lt;script src="https://cdn.rawgit.com/brennan-v/drawl/master/drawl.min.js">&lt;/script><br/>&lt;script>new Drawl();&lt;/script></pre>
+                <h5>Optional (test.svg)</h5>
+            <pre class="prettyprint lang-html">&lt;svg class="delayed-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><br/>&lt;path d="M864 0c88.364 0 160 71.634 160 160 0 36.020-11.91 69.258-32 96l-64 64-224-224 64-64c26.742-20.090 59.978-32 96-32zM64 736l-64 288 288-64 592-592-224-224-592 592zM715.578 363.578l-448 448-55.156-55.156 448-448 55.156 55.156z">&lt;/path><br/>&lt;/svg></pre>
+        </section>
     </div>
 </body>
-<!-- drawl js -->
+<!-- drawl js script-->
 <script src="drawl.min.js"></script>
-<!-- default example of drawl looking for svgs with the 'drawl' class with the default options drawlClass: drawl, replayClass: null, and initialDelay: 0-->
-<!--
+<!-- drawl js examples-->
+<!-- default drawl running default options - drawlClass: drawl, replayClass: null, and initialDelay: 0-->
 <script>
     new Drawl();
 </script>
--->
+<!-- drawl assigning the replay function to an element with the class "drawl-again" to replay svgs with the 'replay-svg' class-->
+<script>
+    new Drawl({
+        drawlClass : "replay-svg",
+        replayClass : "drawl-again"
+    });
+</script>
 <!-- another drawl looking for svgs with the 'delayed-svg' class, and giving them a delay of 1 second-->
 <script>
     new Drawl({
         drawlClass : "delayed-svg",
         initialDelay: 1000 //time in ms 1000ms = 1s
-    });
-</script>
-<!-- and a drawl looking to assign the replay function to an element with the class "drawl-again" to replay svgs with the 'replay-svg' class-->
-<script>
-    new Drawl({
-        drawlClass : "replay-svg",
-        replayClass : "drawl-again"
     });
 </script>
 </body>
