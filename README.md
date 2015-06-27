@@ -1,6 +1,7 @@
 ## Drawl.js (Draw & Fill Your SVG Paths)
 ####JavaScript based CSS Animated Effect
 
+![Drawl.js gif](drawl.gif)
 
 ### [LIVE DEMO](http://brennan-v.github.io/drawl/)
 
