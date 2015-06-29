@@ -68,8 +68,8 @@
      *
      * Option Descriptions:
      * drawlClass - HTML Class that will be animated.
-     * replaySelector - HTML Class you can assign to an element to replay animation.
-     * initialDelay - Delay before animation starts, time in milliseconds (1000 ms = 1 second).
+     * replayClass - HTML Class you can assign to an element to replay animation.
+     * initialDelay - Delay animation start, time in milliseconds (1000 ms = 1 second).
      */
 
     Drawl.prototype.options = {
