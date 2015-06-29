@@ -146,9 +146,7 @@ This function leverages on transition event listeners, and listens for the endin
 4. Change `stroke-opacity` to 0.
 ## About
 
-Started by Nick Salloum (Draw-Fill-SVG); improvements (Drawl.js) by Brennan Vargas; huge thanks go to him for getting this started.
-
-Code expanded by [brennan-v](https://github.com/brennan-v/Drawl)
+Initiated by [Nick Salloum](http://callmenick.com) (Draw-Fill-SVG); Development (Drawl.js) by [Brennan Vargas](http://twitter.com/brennanv); huge thanks go to him for getting this started.
 
 ## License
 
