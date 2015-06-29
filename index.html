@@ -29,9 +29,22 @@
             width: 30%;
             height: auto;
         }
-        .ie-soon{
+        .small{
             font-size: 13px;
             color: #333;
+        }
+        .footer{
+            margin-bottom: 2rem;
+            text-align: right;
+        }
+        pre{
+            margin-bottom: 1rem;
+            white-space: pre-wrap;
+        }
+        .footer svg{
+            width: 24px;
+            height: auto;
+            margin-bottom: -6px;
         }
         /* Larger than phone */
         @media (min-width: 550px) {
@@ -39,12 +52,15 @@
                 margin-top: 1rem; }
             .value-props {
                 margin-top: 2rem;
-                margin-bottom: 7rem; }
+                margin-bottom: 3rem; }
         }
 </style>
-    <!-- prettify code -->
+    <!-- prettify code blocks -->
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </head>
+<!-- fork me on github css banner -->
+<style>#forkongithub a{background:#2DAED1;color:#fff;text-decoration:none;font-family:arial,sans-serif;text-align:center;font-weight:bold;padding:10px 40px;font-size:1em;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#17596B;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:fixed;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;z-index:9999;}#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}</style><span id="forkongithub"><a href="https://github.com/brennan-v/drawl">Fork me on GitHub</a></span>
+<!-- page -->
 <body>
     <div class="container">
         <section class="header">
@@ -90,7 +106,7 @@
                     </svg>
                     Chrome, Firefox, Safari & Opera.<br/>
                     Even mobile browsers.<br/>
-                    <span class="ie-soon">IE support coming soon.</span>
+                    <span class="small">IE support coming soon.</span>
                 </div>
                 <div class="four columns value-prop">
                     <svg class="delayed-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
@@ -101,16 +117,67 @@
                 </div>
             </div>
         </section>
-        <section class="setup">
-            <h1>Setup Drawl:</h1>
-                <h4>2. Link and activate Drawl</h4>
-                A. Drawl downloaded and extracted into project assets:
-                <pre class="prettyprint lang-html">&lt;script src="path/to/drawl.js">&lt;/script><br/>&lt;script>new Drawl();&lt;/script></pre>
-                <h5>Or (quicker)</h5>
-                B. Use Drawl.js CDN:
-                <pre class="prettyprint lang-html">&lt;script src="https://cdn.rawgit.com/brennan-v/drawl/master/drawl.min.js">&lt;/script><br/>&lt;script>new Drawl();&lt;/script></pre>
-                <h5>Optional (test.svg)</h5>
-            <pre class="prettyprint lang-html">&lt;svg class="delayed-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><br/>&lt;path d="M864 0c88.364 0 160 71.634 160 160 0 36.020-11.91 69.258-32 96l-64 64-224-224 64-64c26.742-20.090 59.978-32 96-32zM64 736l-64 288 288-64 592-592-224-224-592 592zM715.578 363.578l-448 448-55.156-55.156 448-448 55.156 55.156z">&lt;/path><br/>&lt;/svg></pre>
+        <section id="setup">
+            <h1 style="color: #33C3F0">Setup Drawl.js</h1>
+                <h4>1. Link and activate Drawl</h4>
+                A. Link to local copy of Drawl
+                <pre class="prettyprint lang-html">&lt;script src="path/to/drawl.js">&lt;/script><br/>&lt;script><br/>new Drawl();<br/>&lt;/script></pre>
+                <h5>Or (quicker - without downloading anything)</h5>
+                B. Use Drawl hosted CDN:
+                <pre class="prettyprint lang-html">&lt;script src="https://cdn.rawgit.com/brennan-v/drawl/master/drawl.min.js">&lt;/script><br/>&lt;script><br/>new Drawl();<br/>&lt;/script></pre>
+
+                <h4>2. Setup your SVG</h4>
+                Add an inline SVG to your page and add the 'drawl' class:
+                <pre class="prettyprint">&lt;svg class="drawl"...</pre>
+                The inside paths must have a fill, stroke, and stroke-width defined.<br/>
+                <span class="small">In order for the plugin to work properly, please convert all shapes to paths.</span>
+                <pre class="prettyprint">&lt;path fill="#color" stroke="#color" stroke-width="px"...</pre>
+                Example of how an SVG using Drawl looks:
+                <pre class="prettyprint lang-html">&lt;svg class="drawl" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><br/>&lt;path fill="#000" stroke="#000" stroke-width="10px" d="M864 0c88.364 0 160 71.634 160 160 0 36.020-11.91 69.258-32 96l-64 64-224-224 64-64c26.742-20.090 59.978-32 96-32zM64 736l-64 288 288-64 592-592-224-224-592 592zM715.578 363.578l-448 448-55.156-55.156 448-448 55.156 55.156z"><br/>&lt;/path><br/>&lt;/svg></pre>
+                <span style="font-size: 12px;">This code will produce a pencil SVG. Copy & paste this SVG to do a quick test.</span>
+            <h4>3. Drawl.js Options</h4>
+                A new Drawl:<br/>
+                <pre class="prettyprint lang-html">&lt;script><br/>    new Drawl();<br/>&lt;/script></pre>
+                runs with the following defaults:
+                <pre class="prettyprint">&lt;script><br/>new Drawl({<br/>    drawlClass: "drawl", // HTML class for SVG tags<br/>    replayClass: null, // HTML Class you can assign to an element to replay animation.<br/>    initialDelay: 0  // delay animation start. Time in milliseconds (1000ms = 1s)<br/>}); <br/>&lt;/script></pre>
+                So, lets say that you wanted to do the following:<br/>
+                1. Change the drawlClass to "animated-svg".<br/>
+                2. Add a button to replay the animation.<br/>
+                3. Initially delay (on page load) the SVG from animating by 3 seconds (3000ms):<br/><br/>
+                Your Drawl init script would be:
+                <pre class="prettyprint">&lt;script><br/>new Drawl({<br/>    drawlClass: "animated-svg",<br/>    replayClass: "drawl-again",<br/>    initialDelay: 3000<br/>}); <br/>&lt;/script></pre>
+                and the HTML for your SVG and replay button would look something like this:
+                <pre class="prettyprint">&lt;svg class="animated-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><br/>&lt;path fill="#000" stroke="#000" stroke-width="10px" d="...">&lt;/path><br/>&lt;/svg></pre>
+                <pre class="prettyprint">&lt;button class="drawl-again">Replay&lt;/button></pre>
+        </section>
+        <section id="more-info">
+            <h4>Browser Support</h4>
+            This plugin will only work in browsers that support both SVGs and SVG effects for HTML:<br/>
+            Right now this plug will not work with Internet Explorer since it has horrible support for SVG effects. <br/>
+            Drawl SVGs in IE just appear normal (filled in) with no magic.<br/><br/>
+            <b>SVGs</b> - IE**, FF 31+, Chrome 31+, Safari 7+, iOS Safari 7.1+, and Android Browser 4.4+<br/>
+            <b>SVG Effects for HTML</b> - IE**, FF 31+, Chrome 31+, iOS Safari 7.1+, and Android Browser 4.4+<br/>
+            <span class="small">**Planning on adding support to IE soon.</span><br/><br/>
+            In order for the plugin to work properly, please convert all shapes to paths.
+            <h4>Contribution Guidelines</h4>
+            Drawl.js loves pull requests. Here's a quick guide:
+            <br/><br/>
+            1. Fork it<br/>
+            2. Create your feature/bug/dev branch.<br/>
+            3. Commit your changes to the branch.<br/>
+            4. Push to the branch.<br/>
+            5. Create new pull request to the Dev branch.<br/>
+            <br/>
+            Please make sure to include any additional info with your pull request.<br/><br/>
+            <span style="color:#33C3F0;">Drawl.js</span> is MIT Licensed.<br/>
+            Free for personal and commercial use.<br/><br/>
+            <a href="https://github.com/brennan-v/drawl" class="button button-primary">Check out on Github</a><br/>
+        </section>
+        <section class="footer">
+            drawl.js <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+            <path  fill="#B4BEC8" stroke="#33C3F0" stroke-width="2px"  d="M608 192l-96 96 224 224-224 224 96 96 288-320-288-320zM288 192l-288 320 288 320 96-96-224-224 224-224-96-96z"></path>
+            </svg>by <a href="brennanv.com">brennan vargas</a> <a href="twitter.com/brennanv">(@brennanv)</a><br/>
+            initiated by <a href="http://callmenick.com">nick salloum</a>
         </section>
     </div>
 </body>
