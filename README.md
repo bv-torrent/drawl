@@ -3,7 +3,7 @@
 
 ![Drawl.js gif](drawl.gif)
 
-### [LIVE DEMO](http://brennan-v.github.io/drawl/)
+### [LIVE DEMO](http://b-v.co/drawl/)
 
 ## Dependencies
 
